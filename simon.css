@@ -10,6 +10,13 @@ body{
     width: 100%;
     background-color: aqua;
 }
+.start{
+    margin-top: 40px;
+    text-align: center;
+    width :120px;
+    height :30px;
+    background-color: white;
+}
 
 .bbox{
     border-radius: 20px;
@@ -52,4 +59,7 @@ body{
 }
 .pink{
     background-color: pink;
+}
+.remove{
+    display: none;
 }

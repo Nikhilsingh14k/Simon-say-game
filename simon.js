@@ -7,7 +7,7 @@ let btns=["yellow","red","blue","green"];
 
 let gameStarted=false;
 let main=document.querySelector(`.main`);
-
+let start=document.querySelector(`.start`);
 let level=0;
 let h2=document.querySelector("h2");
 let h3=document.querySelector("h3");
@@ -16,10 +16,24 @@ document.addEventListener("keypress",function(){
     if(gameStarted==false){
         console.log("game started");
         main.classList.remove("pink");
+        h3.innerText=" ";
+        gameStarted=true;
+        levelup();
+        start.classList.add("remove");
+    }
+
+    
+})
+start.addEventListener("click",function(){
+    if(gameStarted==false){
+        console.log("game started");
+        main.classList.remove("pink");
+        start.classList.add("remove");
+        h3.innerText=" ";
         gameStarted=true;
         levelup();
     }
-    
+
     
 })
 
@@ -73,6 +87,7 @@ function checkanswer(length){
         h2.innerText=`THE GAME IS OVER PRESS ANY KEY TO START ! \n ${name}'s  SCORE IS ${level}  `;
         h3.innerText=` ${name} ${iq}   `;
         gameStarted=false;
+        start.classList.remove("remove");
         level=0;
         gameseq=[];
         userseq=[];
